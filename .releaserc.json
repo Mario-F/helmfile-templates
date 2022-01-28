@@ -10,10 +10,7 @@
         {"type": "test", "release": "patch"},
         {"type": "build", "release": "patch"},
         {"type": "ci", "release": "patch"}
-      ],
-      "parserOpts": {
-        "noteKeywords": ["BREAKING CHANGE", "BREAKING CHANGES"]
-      }
+      ]
     }],
     "@semantic-release/release-notes-generator",
     [
