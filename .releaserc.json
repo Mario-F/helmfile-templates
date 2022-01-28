@@ -14,9 +14,12 @@
     }],
     ["@semantic-release/release-notes-generator", {
       "preset": "angular",
-      "presetConfig": {
+      "config": {
         "types": [
-          {"type": "docs", "section": "Documentation"},
+          {"type": "fix", "section": "Bug Fixes"},
+          {"type": "feat", "section": "Features"},
+          {"type": "perf", "section": "Improvements"},
+          {"type": "docs", "section": "Miscellaneous"},
           {"type": "style", "section": "Miscellaneous"},
           {"type": "refactor", "section": "Miscellaneous"},
           {"type": "test", "section": "Miscellaneous"},
