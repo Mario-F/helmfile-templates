@@ -1,0 +1,11 @@
+# ide
+.vscode
+
+# temps
+helmfile-*/*
+**/helmfile-*/*
+temp
+
+# credentials
+secure
+*.dec
