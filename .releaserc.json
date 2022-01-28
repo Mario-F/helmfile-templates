@@ -12,7 +12,19 @@
         {"type": "ci", "release": "patch"}
       ]
     }],
-    "@semantic-release/release-notes-generator",
+    ["@semantic-release/release-notes-generator", {
+      "preset": "angular",
+      "presetConfig": {
+        "types": [
+          {"type": "docs", "section": "Documentation"},
+          {"type": "style", "section": "Miscellaneous"},
+          {"type": "refactor", "section": "Miscellaneous"},
+          {"type": "test", "section": "Miscellaneous"},
+          {"type": "build", "section": "Miscellaneous"},
+          {"type": "ci", "section": "Miscellaneous"}
+        ]
+      }
+    }],
     [
       "@semantic-release/changelog",
       {
