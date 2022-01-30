@@ -13,7 +13,6 @@
       ]
     }],
     ["@semantic-release/release-notes-generator", {
-      "preset": "angular",
       "config": {
         "types": [
           {"type": "fix", "section": "Bug Fixes"},
