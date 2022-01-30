@@ -20,8 +20,8 @@
       "presetConfig ": {
         "types": [
           {"type": "*", "hidden": false, "section": "Other"},
-          {"type": "fix", "hidden": false, "section": "Bug Fixes"},
-          {"type": "feat", "hidden": false, "section": "Features"},
+          {"type": "fix", "hidden": false, "section": "Fixes"},
+          {"type": "feat", "hidden": false, "section": "Upgrades"},
           {"type": "perf", "hidden": false, "section": "Improvements"},
           {"type": "docs", "hidden": false, "section": "Miscellaneous"},
           {"type": "style", "hidden": false, "section": "Miscellaneous"},
