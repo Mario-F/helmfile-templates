@@ -27,7 +27,7 @@
           {"type": "refactor", "section": "Miscellaneous"},
           {"type": "test", "section": "Miscellaneous"},
           {"type": "build", "section": "Miscellaneous"},
-          {"type": "ci", "section": "Miscellaneous"}
+          {"type": "ci", "section": "Miscellaneous"},
           {"type": "*", "section": "Miscellaneous"}
         ]
       }
