@@ -12,8 +12,26 @@
         {"type": "refactor", "release": "patch"},
         {"type": "test", "release": "patch"},
         {"type": "build", "release": "patch"},
-        {"type": "ci", "release": "patch"}
+        {"type": "ci", "release": "patch"},
+        {"type": "*", "release": "patch"}
       ]
+    }],
+    ["@semantic-release/release-notes-generator", {
+      "preset": "conventionalcommits",
+      "presetConfig ": {
+        "types": [
+          {"type": "*", "hidden": false, "section": "Wrong formatted commits"},
+          {"type": "fix", "hidden": false, "section": "Fixes"},
+          {"type": "feat", "hidden": false, "section": "Upgrades"},
+          {"type": "perf", "hidden": false, "section": "Improvements"},
+          {"type": "docs", "hidden": false, "section": "Miscellaneous"},
+          {"type": "style", "hidden": false, "section": "Miscellaneous"},
+          {"type": "refactor", "hidden": false, "section": "Miscellaneous"},
+          {"type": "test", "hidden": false, "section": "Miscellaneous"},
+          {"type": "build", "hidden": false, "section": "Miscellaneous"},
+          {"type": "ci", "hidden": false, "section": "Miscellaneous"}
+        ]
+      }
     }],
     [
       "@semantic-release/changelog",
