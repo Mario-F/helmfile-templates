@@ -17,7 +17,7 @@ jobs:
         with:
           node-version: 14
       - name: Install dependencies
-        run: npm install -g semantic-release @semantic-release/changelog @semantic-release/git
+        run: npm install -g semantic-release @semantic-release/changelog @semantic-release/git conventional-changelog-conventionalcommits
       - name: Release-Dryrun
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
