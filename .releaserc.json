@@ -28,6 +28,7 @@
           {"type": "test", "section": "Miscellaneous"},
           {"type": "build", "section": "Miscellaneous"},
           {"type": "ci", "section": "Miscellaneous"}
+          {"type": "*", "section": "Miscellaneous"}
         ]
       }
     }],
