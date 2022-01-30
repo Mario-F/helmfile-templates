@@ -1,0 +1,34 @@
+---
+environments:
+  hcloud-k3s:
+    values:
+      - ./clusters/defaults.yaml
+      - ./clusters/hcloud-k3s.yaml
+      - ./secure/hcloud-k3s.yaml
+  hcloud-bare:
+    values:
+      - ./clusters/defaults.yaml
+      - ./clusters/hcloud-bare.yaml
+      - ./secure/hcloud-bare.yaml
+
+---
+helmDefaults:
+  wait: true
+  timeout: 300
+  atomic: true
+  cleanupOnFail: true
+
+---
+helmfiles:
+
+  - path: ./helmfiles/monitoring/helmfile.yaml
+    values:
+      - {{ toYaml .Values | nindent 8 }}
+      
+  - path: ./helmfiles/infra/helmfile.yaml
+    values:
+      - {{ toYaml .Values | nindent 8 }}
+
+  - path: ./helmfiles/services/helmfile.yaml
+    values:
+      - {{ toYaml .Values | nindent 8 }}
