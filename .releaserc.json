@@ -19,16 +19,16 @@
       "preset": "conventionalcommits",
       "presetConfig ": {
         "types": [
-          {"type": "fix", "section": "Bug Fixes"},
-          {"type": "feat", "section": "Features"},
-          {"type": "perf", "section": "Improvements"},
-          {"type": "docs", "section": "Miscellaneous"},
-          {"type": "style", "section": "Miscellaneous"},
-          {"type": "refactor", "section": "Miscellaneous"},
-          {"type": "test", "section": "Miscellaneous"},
-          {"type": "build", "section": "Miscellaneous"},
-          {"type": "ci", "section": "Miscellaneous"},
-          {"type": "*", "section": "Miscellaneous"}
+          {"type": "*", "hidden": false, "section": "Other"},
+          {"type": "fix", "hidden": false, "section": "Bug Fixes"},
+          {"type": "feat", "hidden": false, "section": "Features"},
+          {"type": "perf", "hidden": false, "section": "Improvements"},
+          {"type": "docs", "hidden": false, "section": "Miscellaneous"},
+          {"type": "style", "hidden": false, "section": "Miscellaneous"},
+          {"type": "refactor", "hidden": false, "section": "Miscellaneous"},
+          {"type": "test", "hidden": false, "section": "Miscellaneous"},
+          {"type": "build", "hidden": false, "section": "Miscellaneous"},
+          {"type": "ci", "hidden": false, "section": "Miscellaneous"}
         ]
       }
     }],
