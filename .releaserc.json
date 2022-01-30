@@ -13,7 +13,8 @@
       ]
     }],
     ["@semantic-release/release-notes-generator", {
-      "config": {
+      "preset": "conventionalcommits",
+      "presetConfig ": {
         "types": [
           {"type": "fix", "section": "Bug Fixes"},
           {"type": "feat", "section": "Features"},
