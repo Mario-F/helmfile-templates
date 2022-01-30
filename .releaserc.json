@@ -2,8 +2,11 @@
   "branches": ["main"],
   "plugins": [
     ["@semantic-release/commit-analyzer", {
-      "preset": "angular",
+      "preset": "conventionalcommits",
       "releaseRules": [
+        {"type": "fix", "release": "minor"},
+        {"type": "feat", "release": "minor"},
+        {"type": "perf", "release": "patch"},
         {"type": "docs", "release": "patch"},
         {"type": "style", "release": "patch"},
         {"type": "refactor", "release": "patch"},
