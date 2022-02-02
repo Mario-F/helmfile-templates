@@ -5,6 +5,7 @@
 helmfile-*/*
 **/helmfile-*/*
 temp
+tmp
 
 # credentials
 secure
