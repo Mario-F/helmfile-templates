@@ -1,0 +1,18 @@
+---
+{{ readFile "../common/templates.yaml" }}
+
+repositories:
+
+  - name: bedag
+    url: https://bedag.github.io/helm-charts
+
+  - name: grafana
+    url: https://grafana.github.io/helm-charts
+
+releases:
+
+  - name: grafana-loki
+    <<: *system
+    namespace: logging-system
+    chart: grafana/loki
+    version: 2.10.0
