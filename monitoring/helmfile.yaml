@@ -13,6 +13,7 @@ releases:
 
   - name: grafana-loki
     <<: *system
+    installedTemplate: '{{ .Values | get "cluster-logging.loki.installed" ( .Values | get "cluster-logging.installed" "false" ) }}'
     namespace: logging-system
     chart: grafana/loki
-    version: 2.10.0
+    version: 2.10.1

@@ -1,0 +1,65 @@
+# Values: https://github.com/grafana/helm-charts/tree/main/charts/loki
+---
+{{- $prometheus := .Values | get "prometheus" dict }}
+{{- $config := .Values | get "cluster-logging" }}
+
+{{- $lokiDomain := $config | get "loki.domain" }}
+ingress:
+  enabled: true
+  {{- if $config | get "auth.enabled" false }}
+  annotations:
+    nginx.ingress.kubernetes.io/auth-type: basic
+    nginx.ingress.kubernetes.io/auth-secret: "{{ $config | get "auth.name" "cluster-logging-auth" }}"
+  {{- end }}
+  hosts:
+    - host: {{ $lokiDomain }}
+      paths:
+        - /
+  tls:
+    - secretName: chart-example-tls
+      hosts:
+        - {{ $lokiDomain }}
+
+config:
+  
+  schema_config:
+    configs:
+      - from: 2022-02-23
+        store: boltdb-shipper
+        object_store: s3
+        schema: v11
+        index:
+          prefix: index_
+          period: 24h
+
+  storage_config:
+    boltdb_shipper:
+      shared_store: s3
+    aws:
+      {{- if $config | get "storage.s3.enabled" false }}
+      {{ $s3Config := $config | get "storage.s3" }}
+      bucketnames: {{ $s3Config.bucket }}
+      region: "us-east-1"
+      endpoint: "{{ .Values | get $s3Config.urlRef }}"
+      access_key_id: "{{ .Values | get $s3Config.accessRef }}"
+      secret_access_key: "{{ .Values | get $s3Config.secretRef }}"
+      {{- end }}
+
+  table_manager:
+    retention_deletes_enabled: true
+    retention_period: {{ $config | get "storage.retention" "33d" }}
+
+  compactor:
+    shared_store: s3
+  
+resources:
+  requests:
+    cpu: {{ $config | get "loki.resources.requests.cpu" "200m" }}
+    memory: {{ $config | get "loki.resources.requests.memory" "512Mi" }}
+  limits:
+    cpu: {{ $config | get "loki.resources.limits.cpu" "2000m" }}
+    memory: {{ $config | get "loki.resources.requests.memory" "2048Mi" }}
+
+serviceMonitor:
+  enabled: {{ $prometheus | get "enabled" "false" }}
+  additionalLabels: {{ $prometheus | get "labels" dict | toYaml | nindent 4 }}
