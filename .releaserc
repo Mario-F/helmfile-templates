@@ -34,7 +34,8 @@
             {"type": "refactor", "hidden": false, "section": "Miscellaneous"},
             {"type": "test", "hidden": false, "section": "Miscellaneous"},
             {"type": "build", "hidden": false, "section": "Miscellaneous"},
-            {"type": "ci", "hidden": false, "section": "Miscellaneous"}
+            {"type": "ci", "hidden": false, "section": "Miscellaneous"},
+            {"type": "", "hidden": false, "section": "Malformed Commits"}
           ]
         }
       }
