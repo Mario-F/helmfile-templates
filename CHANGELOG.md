@@ -1,3 +1,22 @@
+## [1.1.0](https://github.com/Mario-F/helmfile-templates/compare/v1.0.0...v1.1.0) (2022-05-15)
+
+
+### Features
+
+* added common templates ([663ef59](https://github.com/Mario-F/helmfile-templates/commit/663ef59506616b21d0c354badd826441ff89dc75))
+* added grafana-loki ([726a87a](https://github.com/Mario-F/helmfile-templates/commit/726a87a3b12314d4cc828fbb897d4eaf1dc23dd3))
+* added logging helmfile ([3bfe182](https://github.com/Mario-F/helmfile-templates/commit/3bfe18211f13b98094cf67a46ed4c3374c3b9dc1))
+
+
+### Miscellaneous
+
+* added gitignore value ([c044671](https://github.com/Mario-F/helmfile-templates/commit/c044671840c369a9bbcc1fa792a36f75244a5fa6))
+
+
+### Malformed Commits
+
+* try workaround for non conventional-commits ([a1cf409](https://github.com/Mario-F/helmfile-templates/commit/a1cf4094d56bef0abee2f23802dac4f477bd9634))
+
 ## 1.0.0 (2022-01-31)
 
 
